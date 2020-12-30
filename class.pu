@@ -1,0 +1,127 @@
+@startuml Class
+' https://www.mum-meblog.com/entry/research-detail/plant_uml
+'QMainWindow -> MyWindow
+'MyWindow -down- Battle
+'MyWindow -down- MonsterGenerator
+'Battle "1" -- "2" Monster
+'Monster -right- Status
+
+together {
+    class input_.input
+    class calculator
+    class output
+}
+
+together {
+    class address
+    class date_time
+}
+
+together {
+    class header
+    class utilities
+}
+
+calculator -[hidden]-address
+address -[hidden]-header
+input_.input-[hidden]-input_.log_raw_data
+input_.input-[hidden]-input_.log_data
+
+
+class header{
+    typedef long long ll;
+    typedef unsigned long ul;
+}
+class address{
+    typedef bitset<32> bitset32;
+    extern const int ADDRESS_LEN;
+	-string origin;
+	-bitset32 bits;
+	-ul prefix_length;
+
+	+address();
+	+address(string init);
+	+address(ul adr, ul prefix);
+	+address(bitset32 adr, ul prefix);
+
+	+void set(string origin);
+	+void set(ul adr, ul prefix);
+	+void set(bitset32 adr, ul prefix);
+
+	+string get_str() const;
+	
+	+bitset32 get_address();
+	+ul get_prefix();
+	+bitset32 get_subnet_address();
+	+bitset32 get_host_address();
+
+	+string get_subnet_str();
+	+string get_host_str();
+
+	+void test_show();
+	-string address2str(bitset32 adr, ul prefix);
+}
+
+class date_time{
+	-string origin;
+	+date_time();
+	+date_time(string init);
+
+	+void set(string date);
+	+void set(ll date);
+	+void reset();
+	+int year();
+	+int month();
+	+int day();
+	+int hour();
+	+int minute();
+	+int second();
+
+	+string get_date_str();
+	+string get_date_str_separated();
+	+ll get_date_ll();
+
+	+bool is_set();
+	+void show();
+
+	-int str2int(string s, int start, int length);
+}
+
+class calculator{
+    map<string, vector<period>> calc_server_downtime(map<string, vector<log_data>>* log_map);
+    map<string, vector<period>> calc_server_downtime(map<string, vector<log_data>>* log_map, int N);
+    map<string, vector<period>> calc_server_busytime(map<string, vector<log_data>>* log_map, int m, int t);
+    map<string, vector<period>> calc_subnet_downtime(map<string, vector<log_data>>* log_map, int N);
+}
+
+namespace input_{
+    class log_raw_data
+    {
+	    +string date;
+	    +string address;
+	    +string result;
+    }
+    class log_data
+    {
+	    +date_time date;
+	    +address adr;
+	    +string result;
+    }
+    class input{
+        typedef pair<date_time, date_time> period;
+        +vector<log_raw_data> input(int num);
+        +vector<log_data> convert(vector<log_raw_data> raw_data);
+    }
+}
+
+class output{
+    +void output_server_downtime(map<string, vector<period>>* period_map);
+    +void output_period(period per);
+    +void output_period_separated(period per);
+}
+
+class utilities{
+    +vector<string> split(string origin, string separator);
+}
+
+@enduml

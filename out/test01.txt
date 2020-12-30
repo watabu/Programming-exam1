@@ -1,0 +1,14 @@
+(N, m, t)
+2 2 100
+
+故障中のサーバ(単一タイムアウト)
+zero-downtime 
+
+故障中のサーバ(2回連続タイムアウト)
+zero-downtime 
+
+過負荷状態のサーバ(2回平均 100[ms]以上)
+zero-downtime 
+
+故障中のサブネット2回連続タイムアウト)
+zero-downtime 

@@ -1,0 +1,2 @@
+D:\GitHub\フィックスポイント\Programming-exam1\src\exam\Debug\exam.exe
+D:\GitHub\フィックスポイント\Programming-exam1\src\exam\Debug\exam.pdb

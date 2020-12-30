@@ -1,0 +1,25 @@
+﻿  address.cpp
+  calculator.cpp
+D:\GitHub\フィックスポイント\Programming-exam1\src\calculator.cpp(140,24): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+D:\GitHub\フィックスポイント\Programming-exam1\src\calculator.cpp(240,29): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  date_time.cpp
+D:\GitHub\フィックスポイント\Programming-exam1\src\date_time.cpp(42,28): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  exam4.cpp
+  input.cpp
+D:\GitHub\フィックスポイント\Programming-exam1\src\input.cpp(10,23): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+D:\GitHub\フィックスポイント\Programming-exam1\src\input.cpp(32,23): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  output.cpp
+  utilities.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(314,39): warning C4244: '=': '_Ty' から '_Ty1' への変換です。データが失われる可能性があります。
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              _Ty1=ll
+          ]
+D:\GitHub\フィックスポイント\Programming-exam1\src\utilities.cpp(25): message : コンパイル対象の関数 テンプレート インスタンス化 'std::pair<ll,int> &std::pair<ll,int>::operator =<double,int,0>(std::pair<double,int> &&) noexcept' のリファレンスを確認してください
+D:\GitHub\フィックスポイント\Programming-exam1\src\utilities.cpp(25): message : コンパイル対象の関数 テンプレート インスタンス化 'std::pair<ll,int> &std::pair<ll,int>::operator =<double,int,0>(std::pair<double,int> &&) noexcept' のリファレンスを確認してください
+  コードを生成中...
+  exam.vcxproj -> D:\GitHub\フィックスポイント\Programming-exam1\src\exam\Debug\exam.exe
